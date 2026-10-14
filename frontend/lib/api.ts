@@ -1,4 +1,4 @@
-import type { AdminStats, Cart, Order, Product, User } from './types';
+import type { Address, AdminStats, Cart, Order, Product, User } from './types';
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -75,7 +75,8 @@ export const removeFromCart = (productId: string) =>
 export const clearCart = () => request<{ ok: boolean }>('/api/cart', { method: 'DELETE' }, true);
 
 // ---- orders ----
-export const createOrder = () => request<Order>('/api/orders', { method: 'POST' }, true);
+export const createOrder = (payload: { address: Address; paymentMethod: string }) =>
+  request<Order>('/api/orders', { method: 'POST', body: JSON.stringify(payload) }, true);
 export const getMyOrders = () => request<Order[]>('/api/orders', {}, true);
 
 // ---- admin ----

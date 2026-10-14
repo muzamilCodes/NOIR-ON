@@ -49,14 +49,23 @@ export default function DashboardPage() {
           ) : (
             <div style={{ overflowX: 'auto' }}>
               <table className="table">
-                <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th></tr></thead>
+                <thead><tr><th>Order</th><th>Date</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr></thead>
                 <tbody>
                   {orders.map((o) => (
                     <tr key={o.id}>
                       <td>{o.id}</td>
                       <td>{new Date(o.date).toLocaleDateString('en-IN')}</td>
-                      <td>{o.items.map((i) => `${i.name} ×${i.qty}`).join(', ')}</td>
+                      <td>
+                        {o.items.map((i) => `${i.name} ×${i.qty}`).join(', ')}
+                        {o.address && (
+                          <div className="order-ship">
+                            Deliver to: {o.address.line1}
+                            {o.address.line2 ? `, ${o.address.line2}` : ''}, {o.address.city}, {o.address.state} {o.address.pincode} · {o.address.phone}
+                          </div>
+                        )}
+                      </td>
                       <td>{money(o.total)}</td>
+                      <td>{o.paymentMethod || '—'}</td>
                       <td><span className="badge">{o.status}</span></td>
                     </tr>
                   ))}

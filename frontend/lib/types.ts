@@ -42,12 +42,24 @@ export interface OrderItem {
   qty: number;
 }
 
+export interface Address {
+  fullName: string;
+  phone: string;
+  line1: string;
+  line2: string;
+  city: string;
+  state: string;
+  pincode: string;
+}
+
 export interface Order {
   id: string;
   userId: string;
   email: string;
   items: OrderItem[];
   total: number;
+  address?: Address;
+  paymentMethod?: string;
   status: string;
   date: string;
 }

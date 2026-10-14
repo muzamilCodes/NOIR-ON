@@ -248,6 +248,14 @@ const orders = [];
 app.post('/api/orders', auth, (req, res) => {
   const items = carts.get(req.userId) || [];
   if (!items.length) return res.status(400).json({ error: 'Cart is empty' });
+
+  const { address, paymentMethod } = req.body || {};
+  const required = ['fullName', 'phone', 'line1', 'city', 'state', 'pincode'];
+  if (!address || required.some((k) => !String(address[k] || '').trim())) {
+    return res.status(400).json({ error: 'A complete shipping address is required' });
+  }
+  const method = ['Card', 'UPI', 'Cash on Delivery'].includes(paymentMethod) ? paymentMethod : 'Card';
+
   const detailed = items
     .map((i) => { const p = findProduct(i.productId); return p ? { id: p.id, name: p.name, price: p.price, qty: i.qty } : null; })
     .filter(Boolean);
@@ -259,7 +267,17 @@ app.post('/api/orders', auth, (req, res) => {
     email: owner ? owner.email : '',
     items: detailed,
     total,
-    status: 'Paid',
+    address: {
+      fullName: String(address.fullName).trim(),
+      phone: String(address.phone).trim(),
+      line1: String(address.line1).trim(),
+      line2: String(address.line2 || '').trim(),
+      city: String(address.city).trim(),
+      state: String(address.state).trim(),
+      pincode: String(address.pincode).trim(),
+    },
+    paymentMethod: method,
+    status: method === 'Cash on Delivery' ? 'Confirmed' : 'Paid',
     date: new Date().toISOString(),
   };
   orders.push(order);

@@ -144,14 +144,25 @@ export default function AdminPage() {
           ) : (
             <div style={{ overflowX: 'auto' }}>
               <table className="table">
-                <thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Date</th></tr></thead>
+                <thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Ship to</th><th>Total</th><th>Payment</th><th>Date</th></tr></thead>
                 <tbody>
                   {orders.map((o) => (
                     <tr key={o.id}>
                       <td>{o.id}</td>
                       <td>{o.email}</td>
                       <td>{o.items.map((i) => `${i.name} ×${i.qty}`).join(', ')}</td>
+                      <td>
+                        {o.address ? (
+                          <div className="order-ship">
+                            {o.address.fullName}<br />
+                            {o.address.line1}
+                            {o.address.line2 ? `, ${o.address.line2}` : ''}, {o.address.city}, {o.address.state} {o.address.pincode}<br />
+                            {o.address.phone}
+                          </div>
+                        ) : '—'}
+                      </td>
                       <td>{money(o.total)}</td>
+                      <td>{o.paymentMethod || '—'}<br /><span className="badge">{o.status}</span></td>
                       <td>{new Date(o.date).toLocaleDateString('en-IN')}</td>
                     </tr>
                   ))}
