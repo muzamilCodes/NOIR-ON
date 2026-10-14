@@ -107,8 +107,17 @@ async function renderGrid(container, products) {
 
 // ---- page controllers ----
 async function pageHome() {
-  const canvas = document.getElementById('hero-canvas');
-  initHeroWatch(canvas, { caseColor: 0xd4af37, dialColor: 0x0a0a0a, accentColor: 0xf0c75e, strapColor: 0x1a1210 });
+  const heroImg = document.querySelector('.hero-watch-img');
+  if (heroImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const wrap = heroImg.parentElement;
+    wrap.addEventListener('mousemove', (e) => {
+      const r = wrap.getBoundingClientRect();
+      const mx = (e.clientX - r.left) / r.width - 0.5;
+      const my = (e.clientY - r.top) / r.height - 0.5;
+      heroImg.style.transform = `translate(${mx * 14}px, ${my * 12}px) rotateY(${mx * 4}deg) rotateX(${-my * 4}deg)`;
+    });
+    wrap.addEventListener('mouseleave', () => { heroImg.style.transform = ''; });
+  }
 
   initCounters(document);
 
