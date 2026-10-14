@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NOIRÉON · 3D Luxury Watch Collection</title>
+  <meta name="description" content="NOIRÉON — independent haute horlogerie rendered in stunning 3D. Explore our animated collection of luxury timepieces." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body data-page="home">
+
+  <header class="hero-full container">
+    <div class="hero-copy">
+      <span class="eyebrow">Maison NOIRÉON · Est. 1974</span>
+      <h1>Time, rendered in <span class="gold">three dimensions</span>.</h1>
+      <p class="lead">
+        Every timepiece in our collection is engineered to be admired from every angle.
+        Rotate, float, and fall in love with haute horlogerie — live in your browser.
+      </p>
+      <div class="hero-cta">
+        <a href="collection.html" class="btn btn-gold">Explore the Collection</a>
+        <a href="about.html" class="btn btn-ghost">Our Craft</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><b data-count="8">0</b><span>Signature Models</span></div>
+        <div class="stat"><b data-count="50" data-suffix="+">0</b><span>Years of Craft</span></div>
+        <div class="stat"><b data-count="100" data-suffix="h">0</b><span>Power Reserve</span></div>
+      </div>
+    </div>
+
+    <div class="hero-canvas-wrap">
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero-glass chip-1">
+        <span class="g-icon">🜲</span>
+        <div><b>18k Rose Gold</b><span>Hand-polished case</span></div>
+      </div>
+      <div class="hero-glass chip-2">
+        <span class="g-icon">⚙</span>
+        <div><b>In-House Caliber</b><span>Assembled by one master</span></div>
+      </div>
+      <div class="hero-glass chip-3">
+        <span class="g-icon">✦</span>
+        <div><b>Limited Edition</b><span>25 pieces per year</span></div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="mouse"></div>
+      Scroll
+    </div>
+  </header>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>Haute Horlogerie <i class="dot">◆</i> Since 1974 <i class="dot">◆</i> Grand Feu Enamel <i class="dot">◆</i> In-House Calibers <i class="dot">◆</i> Limited Editions <i class="dot">◆</i> Lifetime Service <i class="dot">◆</i></span>
+      <span>Haute Horlogerie <i class="dot">◆</i> Since 1974 <i class="dot">◆</i> Grand Feu Enamel <i class="dot">◆</i> In-House Calibers <i class="dot">◆</i> Limited Editions <i class="dot">◆</i> Lifetime Service <i class="dot">◆</i></span>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="divider"></div>
+        <h2>Featured Timepieces</h2>
+        <p>A curated selection from the collection. Each model rendered live in 3D — move your cursor to see the light play across the case.</p>
+      </div>
+      <div class="grid grid-4" id="featured-grid"></div>
+      <div style="text-align:center; margin-top:44px" class="reveal">
+        <a href="collection.html" class="btn btn-ghost">View Full Collection</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="stats-band">
+        <div class="stat reveal"><b data-count="900" data-suffix="">0</b><span>Pieces per year</span></div>
+        <div class="stat reveal"><b data-count="7" data-suffix="">0</b><span>Enamel firings per dial</span></div>
+        <div class="stat reveal"><b data-count="100" data-suffix="h">0</b><span>Max power reserve</span></div>
+        <div class="stat reveal"><b data-count="25" data-suffix="">0</b><span>Pieces, finest references</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="split">
+        <div class="reveal">
+          <span class="eyebrow">Craftsmanship</span>
+          <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem); margin:18px 0">Assembled by hand. Perfected over decades.</h2>
+          <p style="color:var(--muted); margin-bottom:18px">
+            Each NOIRÉON movement is assembled by a single master watchmaker, from the
+            first jewel to the final regulation. We produce fewer than 900 pieces a year —
+            because patience cannot be automated.
+          </p>
+          <a href="about.html" class="btn btn-ghost">Read Our Story</a>
+        </div>
+        <div class="feature-grid reveal" style="grid-template-columns:1fr 1fr; margin-top:0">
+          <div class="feature"><div class="icon">🜂</div><h3>Grand Feu Enamel</h3><p>Dials fired seven times for impossible depth.</p></div>
+          <div class="feature"><div class="icon">⚙</div><h3>In-House Calibers</h3><p>Movements designed and finished entirely by hand.</p></div>
+          <div class="feature"><div class="icon">◈</div><h3>Precious Metals</h3><p>18k gold, grade-5 titanium, and living bronze.</p></div>
+          <div class="feature"><div class="icon">✦</div><h3>Limited Editions</h3><p>As few as 25 pieces of our finest references.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="divider"></div>
+        <h2>Words From Our Collectors</h2>
+      </div>
+      <div class="grid grid-3">
+        <div class="t-card reveal">
+          <div class="quote">“</div>
+          <p>The Midnight Tourbillon is the finest object I own. Watching the escapement rotate never gets old.</p>
+          <div class="who">
+            <div class="avatar">AR</div>
+            <div><b>Alexandra Reyes</b><span>Collector, Geneva</span><div class="stars">★★★★★</div></div>
+          </div>
+        </div>
+        <div class="t-card reveal">
+          <div class="quote">“</div>
+          <p>My Solar Bronze has patinated with every expedition. It isn't a watch, it's a journal on my wrist.</p>
+          <div class="who">
+            <div class="avatar">DK</div>
+            <div><b>Daniel Kim</b><span>Alpinist, Seoul</span><div class="stars">★★★★★</div></div>
+          </div>
+        </div>
+        <div class="t-card reveal">
+          <div class="quote">“</div>
+          <p>Service was effortless and the enamel dial is unmatched. NOIRÉON understands restraint.</p>
+          <div class="who">
+            <div class="avatar">MO</div>
+            <div><b>Meera Osei</b><span>Architect, London</span><div class="stars">★★★★☆</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="newsletter reveal">
+        <h2>Join the Inner Circle</h2>
+        <p>Be first to hear about new references, private viewings, and limited releases. No noise — only horology.</p>
+        <form id="newsletter-form" novalidate>
+          <input type="email" name="email" placeholder="your@email.com" required />
+          <button type="submit" class="btn btn-gold">Subscribe</button>
+        </form>
+        <div class="form-msg" id="newsletter-msg"></div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

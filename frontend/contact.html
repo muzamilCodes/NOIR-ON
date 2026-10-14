@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact · NOIRÉON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body data-page="contact">
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="divider"></div>
+        <h2>Contact the Concierge</h2>
+        <p>Questions about a timepiece, a private viewing, or servicing? We reply within one business day.</p>
+      </div>
+
+      <div class="split" style="max-width:960px; margin:0 auto">
+        <div class="reveal">
+          <div class="feature" style="text-align:left; margin-bottom:16px">
+            <div class="icon">📍</div>
+            <h3>Atelier & Boutique</h3>
+            <p>12 Rue du Temps, Geneva, Switzerland</p>
+          </div>
+          <div class="feature" style="text-align:left; margin-bottom:16px">
+            <div class="icon">✉</div>
+            <h3>Email</h3>
+            <p>concierge@chronoluxe.example</p>
+          </div>
+          <div class="feature" style="text-align:left">
+            <div class="icon">☎</div>
+            <h3>Telephone</h3>
+            <p>+41 22 000 0000 · Mon–Fri, 9–18 CET</p>
+          </div>
+        </div>
+
+        <div class="auth-card reveal" style="max-width:none">
+          <h2 style="text-align:left">Send a Message</h2>
+          <form id="contact-form" novalidate style="margin-top:22px">
+            <div class="field">
+              <label for="cname">Name</label>
+              <input type="text" id="cname" name="cname" placeholder="Your full name" required />
+            </div>
+            <div class="field">
+              <label for="cemail">Email</label>
+              <input type="email" id="cemail" name="cemail" placeholder="you@example.com" required />
+            </div>
+            <div class="field">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option>Private viewing</option>
+                <option>Product enquiry</option>
+                <option>Servicing & repair</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold btn-block">Send Message</button>
+            <div class="form-msg" id="form-msg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

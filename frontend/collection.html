@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collection · NOIRÉON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body data-page="collection">
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="divider"></div>
+        <h2>The Collection</h2>
+        <p>Eight references, each rendered live in three dimensions. Filter by style and find the piece that speaks to you.</p>
+      </div>
+
+      <div class="filters reveal" style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:44px">
+        <button class="btn btn-ghost btn-sm active" data-filter="all">All</button>
+        <button class="btn btn-ghost btn-sm" data-filter="Skeleton">Skeleton</button>
+        <button class="btn btn-ghost btn-sm" data-filter="Haute">Haute</button>
+      </div>
+
+      <div class="grid grid-4" id="collection-grid"></div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

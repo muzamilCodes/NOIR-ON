@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story · NOIRÉON</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body data-page="about">
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+        <div class="hero-canvas-wrap reveal" style="height:min(60vh,520px)">
+          <canvas id="about-canvas"></canvas>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Since 1974</span>
+          <h2 style="font-size:clamp(2rem,4vw,3rem); margin:18px 0">A maison built on patience</h2>
+          <p style="color:var(--muted); margin-bottom:18px">
+            NOIRÉON began in a single-room atelier with one watchmaker, one lathe, and an
+            obsession with the way light moves across a polished case. Fifty years later, that
+            obsession hasn't changed — only the number of hands that share it.
+          </p>
+          <p style="color:var(--muted)">
+            We still assemble every movement by hand. We still fire our enamel dials seven times.
+            And we still produce fewer than 900 pieces a year, because a timepiece that outlives
+            its owner cannot be rushed.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="divider"></div>
+        <h2>The Principles We Keep</h2>
+      </div>
+      <div class="feature-grid">
+        <div class="feature reveal"><div class="icon">🜂</div><h3>Grand Feu Enamel</h3><p>Each dial is fired seven times at 800°C, risking destruction for unmatched depth of colour.</p></div>
+        <div class="feature reveal"><div class="icon">⚙</div><h3>In-House Calibers</h3><p>Movements designed, decorated, and regulated entirely within our atelier.</p></div>
+        <div class="feature reveal"><div class="icon">◈</div><h3>Precious Materials</h3><p>18k gold, grade-5 titanium, and living bronze that patinas with your story.</p></div>
+        <div class="feature reveal"><div class="icon">✦</div><h3>Limited by Design</h3><p>Our finest references are produced in runs as small as 25 pieces per year.</p></div>
+        <div class="feature reveal"><div class="icon">⌛</div><h3>Lifetime Service</h3><p>Every NOIRÉON is serviced by us, for as long as it keeps time.</p></div>
+        <div class="feature reveal"><div class="icon">🛡</div><h3>Certified Origin</h3><p>Individually numbered and accompanied by a certificate of authenticity.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
