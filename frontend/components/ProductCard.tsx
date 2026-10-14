@@ -8,6 +8,7 @@ import { useAuth } from '@/lib/auth';
 import { useCart } from '@/lib/cart';
 import { money } from '@/lib/format';
 import { toast } from '@/lib/toast';
+import { resolveImageUrl } from '@/lib/api';
 import type { Product } from '@/lib/types';
 
 export default function ProductCard({ product }: { product: Product }) {
@@ -35,7 +36,12 @@ export default function ProductCard({ product }: { product: Product }) {
     <Reveal className="card">
       <Link href={`/product/${product.id}`} className="card-canvas">
         <span className="card-cat">{product.category}</span>
-        <Watch3D variant="card" caseColor={product.caseColor} strapColor={product.strapColor} spinSpeed={0.45} />
+        {product.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img className="card-img" src={resolveImageUrl(product.image)} alt={product.name} loading="lazy" />
+        ) : (
+          <Watch3D variant="card" caseColor={product.caseColor} strapColor={product.strapColor} spinSpeed={0.45} />
+        )}
       </Link>
       <div className="card-body">
         <h3>{product.name}</h3>

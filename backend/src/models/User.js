@@ -6,7 +6,15 @@ const userSchema = new mongoose.Schema(
     name: { type: String, required: true, trim: true },
     email: { type: String, required: true, unique: true, lowercase: true, trim: true, index: true },
     passwordHash: { type: String, required: true },
-    role: { type: String, enum: ['user', 'admin'], default: 'user' },
+    // get: normalises on read so stray whitespace/casing from manual DB edits
+    // (e.g. "admin\n") still resolves to a valid role instead of silently blocking access.
+    role: {
+      type: String,
+      enum: ['user', 'admin'],
+      default: 'user',
+      get: (v) => (v == null ? 'user' : String(v).trim().toLowerCase()),
+      set: (v) => (v == null ? 'user' : String(v).trim().toLowerCase()),
+    },
   },
   {
     timestamps: true,

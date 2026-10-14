@@ -19,6 +19,7 @@ const productSchema = new mongoose.Schema(
     description: { type: String, default: '' },
     caseColor: { type: Number, default: 0xc9a06a },
     strapColor: { type: Number, default: 0x0e0e10 },
+    image: { type: String, default: '' },
     specs: { type: specsSchema, default: () => ({}) },
   },
   {

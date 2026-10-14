@@ -23,6 +23,7 @@ export interface Product {
   description: string;
   caseColor: number;
   strapColor: number;
+  image: string;
   specs: Specs;
 }
 
@@ -69,4 +70,16 @@ export interface AdminStats {
   orders: number;
   users: number;
   revenue: number;
+  delivered: number;
+  pending: number;
 }
+
+export interface AdminUser {
+  id: string;
+  name: string;
+  email: string;
+  role: Role;
+  date: string | null;
+}
+
+export const ORDER_STATUSES = ['Confirmed', 'Paid', 'Shipped', 'Delivered', 'Cancelled'] as const;

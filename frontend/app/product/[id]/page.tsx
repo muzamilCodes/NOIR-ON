@@ -51,7 +51,12 @@ function ProductView({ id }: { id: string }) {
       <div className="container">
         <div className="product-detail">
           <div className="product-viewer">
-            <Watch3D variant="hero" caseColor={product.caseColor} strapColor={product.strapColor} brandText="NOIRÉON" />
+            {product.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img className="product-img" src={api.resolveImageUrl(product.image)} alt={product.name} />
+            ) : (
+              <Watch3D variant="hero" caseColor={product.caseColor} strapColor={product.strapColor} brandText="NOIRÉON" />
+            )}
           </div>
           <div className="product-info">
             <span className="eyebrow">{product.category}</span>

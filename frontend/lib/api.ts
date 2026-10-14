@@ -1,4 +1,4 @@
-import type { Address, AdminStats, Cart, Order, Product, User } from './types';
+import type { Address, AdminStats, AdminUser, Cart, Order, Product, User } from './types';
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -82,7 +82,30 @@ export const getMyOrders = () => request<Order[]>('/api/orders', {}, true);
 // ---- admin ----
 export const adminStats = () => request<AdminStats>('/api/admin/stats', {}, true);
 export const adminOrders = () => request<Order[]>('/api/admin/orders', {}, true);
+export const adminUpdateOrderStatus = (id: string, status: string) =>
+  request<Order>(`/api/admin/orders/${id}/status`, { method: 'PUT', body: JSON.stringify({ status }) }, true);
+export const adminUsers = () => request<AdminUser[]>('/api/admin/users', {}, true);
 export const adminAddProduct = (payload: Partial<Product>) =>
   request<Product>('/api/admin/products', { method: 'POST', body: JSON.stringify(payload) }, true);
+export const adminUpdateProduct = (id: string, payload: Partial<Product>) =>
+  request<Product>(`/api/admin/products/${id}`, { method: 'PUT', body: JSON.stringify(payload) }, true);
 export const adminDeleteProduct = (id: string) =>
   request<{ ok: boolean }>(`/api/admin/products/${id}`, { method: 'DELETE' }, true);
+
+// Multipart image upload; returns a server path like "/uploads/abc.png".
+export async function adminUploadImage(file: File): Promise<string> {
+  const form = new FormData();
+  form.append('image', file);
+  const headers: Record<string, string> = {};
+  const token = getToken();
+  if (token) headers.Authorization = `Bearer ${token}`;
+  const res = await fetch(`${API_URL}/api/admin/upload`, { method: 'POST', body: form, headers });
+  const text = await res.text();
+  const data = text ? (JSON.parse(text) as { url?: string; error?: string }) : {};
+  if (!res.ok || !data.url) throw new Error(data.error || `Upload failed (${res.status})`);
+  return data.url;
+}
+
+// Turn a stored "/uploads/..." path into a fully-qualified URL the browser can load.
+export const resolveImageUrl = (image?: string): string =>
+  !image ? '' : image.startsWith('http') ? image : `${API_URL}${image}`;
