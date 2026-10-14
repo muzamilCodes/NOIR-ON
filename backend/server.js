@@ -10,19 +10,23 @@ const JWT_SECRET = process.env.JWT_SECRET || 'chrono-luxe-dev-secret-change-me';
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, '../frontend')));
+// The Next.js frontend (http://localhost:3000) consumes this API; CORS is open for dev.
 
 // ---------------------------------------------------------------------------
 // In-memory data stores
 // ---------------------------------------------------------------------------
-const users = [];          // { id, name, email, passwordHash }
+// Seeded accounts (demo). Admin can reach /admin; a normal user cannot.
+const users = [
+  { id: 'u_admin', name: 'NOIRÉON Admin', email: 'admin@noireon.com', passwordHash: bcrypt.hashSync('admin123', 10), role: 'admin' },
+  { id: 'u_demo',  name: 'Demo Collector', email: 'user@noireon.com', passwordHash: bcrypt.hashSync('user123', 10), role: 'user' },
+];
 const carts = new Map();   // userId -> [{ productId, qty }]
 
 const products = [
   {
     id: 'block-rg',
     name: 'NOIRÉON Block RG',
-    price: 1850000,
+    price: 185000,
     category: 'Skeleton',
     tagline: 'Rose-gold octagonal case · flying tourbillon',
     description:
@@ -34,7 +38,7 @@ const products = [
   {
     id: 'saphir-noir',
     name: 'NOIRÉON Saphir Noir',
-    price: 1475000,
+    price: 147500,
     category: 'Skeleton',
     tagline: 'Black DLC case · smoked sapphire',
     description:
@@ -46,7 +50,7 @@ const products = [
   {
     id: 'reserve-royale',
     name: 'NOIRÉON Réserve Royale',
-    price: 1240000,
+    price: 124000,
     category: 'Skeleton',
     tagline: 'White-gold case · extended power reserve',
     description:
@@ -58,7 +62,7 @@ const products = [
   {
     id: 'calibre-lumiere',
     name: 'NOIRÉON Calibre Lumière',
-    price: 980000,
+    price: 98000,
     category: 'Skeleton',
     tagline: 'Steel case · luminous skeleton hands',
     description:
@@ -70,7 +74,7 @@ const products = [
   {
     id: 'tourbillon-bleu',
     name: 'NOIRÉON Tourbillon Bleu',
-    price: 2100000,
+    price: 210000,
     category: 'Haute',
     tagline: 'Blue titanium · sapphire tourbillon bridge',
     description:
@@ -82,7 +86,7 @@ const products = [
   {
     id: 'bronze-patine',
     name: 'NOIRÉON Bronze Patine',
-    price: 860000,
+    price: 86000,
     category: 'Skeleton',
     tagline: 'Living bronze · evolves with wear',
     description:
@@ -94,7 +98,7 @@ const products = [
   {
     id: 'nuit-noire',
     name: 'NOIRÉON Nuit Noire',
-    price: 1620000,
+    price: 162000,
     category: 'Haute',
     tagline: 'Black ceramic · rose-gold bridges',
     description:
@@ -106,7 +110,7 @@ const products = [
   {
     id: 'heritage-or',
     name: 'NOIRÉON Héritage Or',
-    price: 2450000,
+    price: 245000,
     category: 'Haute',
     tagline: 'Yellow gold · hand-engraved movement',
     description:
@@ -163,7 +167,8 @@ app.post('/api/auth/register', async (req, res) => {
     return res.status(409).json({ error: 'An account with this email already exists' });
   }
   const passwordHash = await bcrypt.hash(password, 10);
-  const role = req.body.role === 'admin' ? 'admin' : 'user';
+  // Public sign-up always creates a normal user. Admins are provisioned server-side only.
+  const role = 'user';
   const user = { id: `u_${Date.now().toString(36)}`, name, email: normalizedEmail, passwordHash, role };
   users.push(user);
   res.status(201).json({ token: signToken(user), user: { id: user.id, name, email: normalizedEmail, role } });
@@ -299,13 +304,14 @@ app.delete('/api/admin/products/:id', auth, authAdmin, (req, res) => {
 });
 
 // ---------------------------------------------------------------------------
-// Fallback: serve frontend for unknown non-API routes
+// Health + fallback for unknown API routes
 // ---------------------------------------------------------------------------
-app.use((req, res, next) => {
-  if (req.path.startsWith('/api/')) return res.status(404).json({ error: 'Not found' });
-  next();
+app.get('/api/health', (_req, res) => res.json({ ok: true, service: 'noireon-api' }));
+
+app.use((req, res) => {
+  res.status(404).json({ error: 'Not found' });
 });
 
 app.listen(PORT, () => {
-  console.log(`Chrono Luxe server running on http://localhost:${PORT}`);
+  console.log(`NOIRÉON API running on http://localhost:${PORT}`);
 });

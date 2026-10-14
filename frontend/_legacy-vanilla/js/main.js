@@ -107,17 +107,9 @@ async function renderGrid(container, products) {
 
 // ---- page controllers ----
 async function pageHome() {
-  const heroImg = document.querySelector('.hero-watch-img');
-  if (heroImg && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    const wrap = heroImg.parentElement;
-    wrap.addEventListener('mousemove', (e) => {
-      const r = wrap.getBoundingClientRect();
-      const mx = (e.clientX - r.left) / r.width - 0.5;
-      const my = (e.clientY - r.top) / r.height - 0.5;
-      heroImg.style.transform = `translate(${mx * 14}px, ${my * 12}px) rotateY(${mx * 4}deg) rotateX(${-my * 4}deg)`;
-    });
-    wrap.addEventListener('mouseleave', () => { heroImg.style.transform = ''; });
-  }
+  initHeroWatch(document.getElementById('hero-canvas'), {
+    caseColor: 0xc9a06a, strapColor: 0x0e0e10, brandText: 'NOIRÉON',
+  });
 
   initCounters(document);
 
