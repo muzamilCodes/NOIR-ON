@@ -1,4 +1,5 @@
 import type { Address, AdminStats, AdminUser, Cart, Order, Product, User } from './types';
+import { STATIC_PRODUCTS } from './staticProducts';
 
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 
@@ -52,8 +53,25 @@ async function request<T>(path: string, options: RequestInit = {}, auth = false)
 }
 
 // ---- catalog ----
-export const getProducts = () => request<Product[]>('/api/products');
-export const getProduct = (id: string) => request<Product>(`/api/products/${id}`);
+// When a backend is reachable (local dev, or a hosted API) we use its live data.
+// When it isn't (the deployed site has no hosted API/DB), we fall back to the
+// bundled 15-product catalogue so the storefront still renders.
+export async function getProducts(): Promise<Product[]> {
+  try {
+    return await request<Product[]>('/api/products');
+  } catch {
+    return STATIC_PRODUCTS;
+  }
+}
+export async function getProduct(id: string): Promise<Product> {
+  try {
+    return await request<Product>(`/api/products/${id}`);
+  } catch {
+    const found = STATIC_PRODUCTS.find((p) => p.id === id);
+    if (found) return found;
+    throw new Error('Product not found');
+  }
+}
 
 // ---- auth ----
 export interface AuthResult {
