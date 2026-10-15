@@ -1,0 +1,271 @@
+{
+  "exportedAt": "2026-10-15T05:29:23.284Z",
+  "products": [
+    {
+      "name": "NOIRÉON Aurore Rose",
+      "price": 189000,
+      "category": "Skeleton",
+      "tagline": "Rose-gold dawn · blush skeleton",
+      "description": "Warm rose-gold bridges catch first light over a blush-toned skeleton movement, a tender study in pink and shadow.",
+      "caseColor": 14725280,
+      "strapColor": 2757656,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C18",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Minuit Bleu",
+      "price": 205000,
+      "category": "Haute",
+      "tagline": "Midnight blue titanium · tourbillon",
+      "description": "Deep anodised midnight-blue titanium frames a floating tourbillon that seems to turn beneath a night sky.",
+      "caseColor": 1851251,
+      "strapColor": 528162,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T20",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Vert Émeraude",
+      "price": 176000,
+      "category": "Haute",
+      "tagline": "Emerald case · forest movement",
+      "description": "An emerald-green case releases light through rhodium gears tinted like sunlight filtered through a deep forest.",
+      "caseColor": 2062930,
+      "strapColor": 402202,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T17",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Rouge Carmin",
+      "price": 168000,
+      "category": "Skeleton",
+      "tagline": "Crimson PVD · ruby jewels",
+      "description": "A daring crimson PVD case sets the ruby jewels ablaze, the boldest colourway ever to leave the atelier.",
+      "caseColor": 10493998,
+      "strapColor": 1836295,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C16",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Or Jaune",
+      "price": 252000,
+      "category": "Haute",
+      "tagline": "Yellow gold · hand-engraved",
+      "description": "Classic 18k yellow gold over a fully hand-engraved movement, assembled by a single master over four patient months.",
+      "caseColor": 13938487,
+      "strapColor": 2365958,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T25",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Platine Froid",
+      "price": 288000,
+      "category": "Haute",
+      "tagline": "Platinum case · cool clarity",
+      "description": "Cool, weighty platinum lends an almost clinical clarity to the openworked calibre suspended within.",
+      "caseColor": 14672614,
+      "strapColor": 855827,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T28",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Bronze Aurore",
+      "price": 96000,
+      "category": "Skeleton",
+      "tagline": "Living bronze · evolving patina",
+      "description": "CuSn8 bronze warms and patinas with the wearer, so every Bronze Aurore becomes a one-of-one collaboration with time.",
+      "caseColor": 12088115,
+      "strapColor": 2759696,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C96",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Noir Absolu",
+      "price": 172000,
+      "category": "Skeleton",
+      "tagline": "Black DLC · stealth movement",
+      "description": "Absolute black DLC swallows the light, leaving only polished gears and garnet jewels glinting from the void.",
+      "caseColor": 1315863,
+      "strapColor": 328966,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C17",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Cuivre",
+      "price": 112000,
+      "category": "Skeleton",
+      "tagline": "Copper case · warm tone",
+      "description": "Solid copper gives the Cuivre an earthy, industrial warmth that deepens to mahogany with every wear.",
+      "caseColor": 12877119,
+      "strapColor": 2102282,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C11",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Ambre",
+      "price": 128000,
+      "category": "Skeleton",
+      "tagline": "Amber gold · sunset dial",
+      "description": "A sunset-amber case glows over a smoked dial, capturing the last golden hour in brushed metal.",
+      "caseColor": 14715438,
+      "strapColor": 2232838,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C12",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Violet Royal",
+      "price": 158000,
+      "category": "Haute",
+      "tagline": "Royal purple · sapphire bridge",
+      "description": "Regal anodised purple surrounds a sapphire tourbillon bridge, suspending the rotating cage in mid-air.",
+      "caseColor": 5913226,
+      "strapColor": 1378852,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T15",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Turquoise",
+      "price": 134000,
+      "category": "Skeleton",
+      "tagline": "Turquoise case · lagoon light",
+      "description": "A vivid turquoise case evokes a tropical lagoon, its skeleton movement rippling with reflected colour.",
+      "caseColor": 3065014,
+      "strapColor": 336417,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C13",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Champagne",
+      "price": 149000,
+      "category": "Haute",
+      "tagline": "Champagne gold · celebration piece",
+      "description": "Soft champagne-gold plating lends a festive warmth, finished with a guilloché chapter ring in brushed gold.",
+      "caseColor": 14206090,
+      "strapColor": 2366734,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T14",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Acier Lunaire",
+      "price": 104000,
+      "category": "Skeleton",
+      "tagline": "Lunar steel · cool grey",
+      "description": "Brushed lunar-grey steel gives the Acier Lunaire a quiet, technical poise ideal for everyday wear.",
+      "caseColor": 10134704,
+      "strapColor": 922136,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-C10",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    },
+    {
+      "name": "NOIRÉON Rubis",
+      "price": 219000,
+      "category": "Haute",
+      "tagline": "Ruby red · grand complication",
+      "description": "A lacquered ruby-red case guards a grand-complication movement set with a circle of live ruby bearings.",
+      "caseColor": 9313082,
+      "strapColor": 1705228,
+      "image": "",
+      "specs": {
+        "movement": "Manual Cal. NR-T21",
+        "case": "42mm",
+        "water": "30–50m",
+        "power": "72–100h reserve"
+      }
+    }
+  ],
+  "users": [
+    {
+      "name": "NOIRÉON Admin",
+      "email": "admin@noireon.com",
+      "passwordHash": "$2a$10$MvR4JOR2fOGMxpWmvAQPhudIGNr5qWrINXTr26zE/KiCx1Km8sn52",
+      "role": "admin"
+    },
+    {
+      "name": "Demo Collector",
+      "email": "user@noireon.com",
+      "passwordHash": "$2a$10$Ie23HyPUK2GNYtKcSsmf1.BqVAVDNiuEGAt6n7EZCGS8b8MEW.FlS",
+      "role": "user"
+    },
+    {
+      "name": "Fresh Buyer",
+      "email": "fresh2646@x.com",
+      "passwordHash": "$2a$10$DIBeVPWeeVykkZbJeMXjxuc0MHUcVrmvo8XTaszwCUBYdLmPLvzGS",
+      "role": "user"
+    },
+    {
+      "name": "war",
+      "email": "warmuzamil113@gmail.com",
+      "passwordHash": "$2a$10$PSh/KHtmxJAd4k3fIf.kaubzKQLJcBDFxeWHW3g4vAVqVXhwh.0CG",
+      "role": "admin"
+    }
+  ]
+}

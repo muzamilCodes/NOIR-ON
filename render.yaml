@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: noireon-api
+    runtime: node
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: '20'
+      - key: MONGODB_URI # set to your MongoDB Atlas connection string
+        sync: false
+      - key: JWT_SECRET # set a long random secret
+        sync: false
